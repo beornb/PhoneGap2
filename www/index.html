@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <script src="cordova.js"></script>
+        <script src="cordova_plugins.js"></script>
+        <link href="css/Week2Proj3.css" rel="stylesheet" />
+        <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+        <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-sunshine-theme.css" />
+        <script src="lib/onsen/js/angular/angular.min.js"></script>
+        <script src="lib/onsen/js/onsenui.min.js"></script>
+        <script src="js/Week2Proj3.js"></script>
+
+        <title>Demo App</title>
+
+    </head>
+    
+<body ng-controller="AppController" >
+
+    <ons-tabbar>
+        <ons-tabbar-item page="search.html" label="Search" icon="ion-home" active="true"></ons-tabbar-item>
+        <ons-tabbar-item page="myDeals.html" label="My Deals" icon="ion-chatbox-working"></ons-tabbar-item>
+        <ons-tabbar-item page="account.html" label="Account" icon="ion-ios7-cog"></ons-tabbar-item>
+        <ons-tabbar-item page="more.html" label="More" icon="ion-ios7-pricetag"></ons-tabbar-item>
+    </ons-tabbar>
+
+    <ons-template id="search.html">
+        <ons-toolbar>
+            <div class="center ">Find a Deal</div>
+        </ons-toolbar>
+        <p style="padding-top: 10px; color: #999; text-align: left">
+            Booking Date:<br />
+
+            <input type="text" class="text-input" ng-model="text" placeholder="tap to select date" style="display: block; width: 100%" onclick="showDatePicker(this)"><br />
+        </p>
+            <center>
+                <fieldset >
+                    <input class="radio-button" type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
+                    <label for="radio-choice-h-2a" class="SelectLabel">Breakfast</label>
+                    <input class="radio-button"  type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
+                    <label for="radio-choice-h-2b" class="SelectLabel">Lunch</label>
+                    <input class="radio-button" type="radio" name="radio-choice-h-2" id="radio-choice-h-2c" value="other">
+                    <label for="radio-choice-h-2c" class="SelectLabel">Dinner</label>
+
+                </fieldset> 
+            </center>
+        <p style="color: #999; text-align: left">
+            Price:
+            <select id="price" class="text-input" name="price" style="display: block; width: 100%">
+                <option value="$">$</option>
+                <option value="$$">$$</option>
+                <option value="$$$">$$$</option>
+            </select>
+        </p>
+
+        <p style="color: #999; text-align: left">
+            Cuisine:
+            <select id="price" class="text-input" name="price" style="display: block; width: 100%">
+                <option value="1">Australian</option>
+                <option value="2">Chinese</option>
+                <option value="3">Indian</option>
+                <option value="4">Thai</option>
+            </select></p>
+
+        <p style="color: #999; text-align: left">
+            Suburb/City:
+            <input type="text" name="location" id="location" class="text-input" ng-model="text" placeholder="Suburb/City" style="display: block; width: 100%"><br />
+            </p>
+        <ons-button modifier="large" onclick="alert(PageController)">Search</ons-button><br />
+
+</ons-template>
+
+    <ons-template id="myDeals.html">
+        <ons-toolbar>
+            <div class="center">Deal Claim</div>
+        </ons-toolbar>
+
+        <p style="padding-top: 10px; color: #999; text-align: center">
+            <div data-role="content" data-theme="a" align="center">
+                <div style="border-width: 1px; border-style: solid;">Date: 19 Nov 2014 Time: 8:30pm
+        <p>
+            The Krusty Krab
+            <br>125 Gold Coast Highway
+            <br>Surfers Paradise
+        <p>
+            </div>
+            <img src="images/titleReview.png" width=100%>
+            <br>
+            <div style=";border-width: 1px; border-style: solid;">
+                Cuisine: Seafood
+                <br>Price Range: $$
+                <br>Phone: 55 123 456
+            </div>
+        <p>
+            <img src="images/textDealDetail.png" width=100%>
+            <br>
+            <a href="#dealPay"><img src="images/btnClaimDeal.png" width=40%></a>
+            <a href="#search"><img src="images/btnCancelDeal.png" width=40%></a>
+        <p>
+            HOLD EXPIRES AFTER 24 HOURS
+            </div>
+        </p>
+    </ons-template>
+
+    <ons-template id="account.html">
+        <ons-toolbar>
+            <div class="center">Account</div>
+        </ons-toolbar>
+
+        <p style="padding-top: 10px; color: #999; text-align: center">
+
+            Name: Beorn Bishop<br />
+            Job Title: Programmer<br />
+            <img src="images/Placeholder_female.png" width="30%" id="smallImage"><br />
+            <img style="display:none; visibility: hidden" id="largeImage" src="" />
+            <ons-button modifier="large" onclick="CaptureCamera();">Capture From Camera</ons-button><br />
+            <ons-button modifier="large" onclick="getPhotoFromAlbum();">From Photo Album</ons-button><br />
+
+        </p>
+
+    </ons-template>
+
+    <ons-template id="more.html">
+        <ons-toolbar>
+            <div class="center">More Settings</div>
+        </ons-toolbar>
+
+        <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+    </ons-template>
+
+    <ons-template id="settings.html">
+        <ons-toolbar>
+            <div class="center">Settings</div>
+        </ons-toolbar>
+
+        <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+    </ons-template>
+
+</body>
+</html>
