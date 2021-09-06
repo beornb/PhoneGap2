@@ -7,4 +7,6 @@ So far in my initial testing it seems to run faster than jQuery mobile which was
 
 The framework itself is quite basic, alot of the functionality that exists in Jquery mobile is not present in onsen ui, however I prefer to do the main formatting and navigation in the framework and then the detailed formatting in my own CSS.
 
+Text sommit
+
 http://s.onsen.io/
